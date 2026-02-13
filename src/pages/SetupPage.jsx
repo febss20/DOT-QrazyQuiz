@@ -3,18 +3,16 @@ import { useNavigate } from "react-router-dom";
 import { useQuiz } from "@/contexts/QuizContext";
 import { useStartQuiz } from "@/hooks/useStartQuiz";
 import { fetchCategories } from "@/services/triviaApi";
-import {
-  TIMER_OPTIONS,
-  QUESTION_AMOUNTS,
-  DIFFICULTY_OPTIONS,
-  TYPE_OPTIONS,
-} from "@/utils/constants";
-import Navbar from "@/components/Navbar";
-import ResumeModal from "@/components/ResumeModal";
-import CategoryPicker from "@/components/CategoryPicker";
-import ToggleGroup from "@/components/ToggleGroup";
-import QuestionSlider from "@/components/QuestionSlider";
-import ProTip from "@/components/ProTip";
+import { TIMER_OPTIONS, QUESTION_AMOUNTS, DIFFICULTY_OPTIONS, TYPE_OPTIONS } from "@/utils/constants";
+import Navbar from "@/components/common/Navbar";
+import BackgroundBlobs from "@/components/common/BackgroundBlobs";
+import LoadingSpinner from "@/components/common/LoadingSpinner";
+import ErrorAlert from "@/components/common/ErrorAlert";
+import ResumeModal from "@/components/setup/ResumeModal";
+import CategoryPicker from "@/components/setup/CategoryPicker";
+import ToggleGroup from "@/components/setup/ToggleGroup";
+import QuestionSlider from "@/components/setup/QuestionSlider";
+import ProTip from "@/components/setup/ProTip";
 
 export default function SetupPage() {
   const navigate = useNavigate();
@@ -85,11 +83,7 @@ export default function SetupPage() {
       )}
 
       <div className="flex items-center justify-center p-4 py-8">
-        {/* Background blobs */}
-        <div className="fixed top-0 left-0 w-full h-full -z-50 pointer-events-none overflow-hidden">
-          <div className="absolute top-[-10%] right-[-5%] w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-[-10%] left-[-5%] w-96 h-96 bg-blue-900/10 rounded-full blur-3xl" />
-        </div>
+        <BackgroundBlobs />
 
         <div className="w-full max-w-3xl bg-surface-dark rounded-xl shadow-2xl overflow-hidden border border-slate-700 animate-slideUp">
           {/* Header */}
@@ -112,6 +106,7 @@ export default function SetupPage() {
                 options={TYPE_OPTIONS}
                 value={selectedType}
                 onChange={setSelectedType}
+                columns={3}
               />
               <ToggleGroup
                 label="Difficulty Level"
@@ -119,6 +114,7 @@ export default function SetupPage() {
                 options={DIFFICULTY_OPTIONS}
                 value={selectedDifficulty}
                 onChange={setSelectedDifficulty}
+                columns={4}
               />
             </div>
 
@@ -140,12 +136,7 @@ export default function SetupPage() {
 
             <ProTip />
 
-            {/* Error */}
-            {error && (
-              <div className="p-3 rounded-lg bg-error/10 border border-error/30 text-error text-sm">
-                {error}
-              </div>
-            )}
+            <ErrorAlert message={error} />
           </div>
 
           {/* Footer */}
@@ -164,22 +155,7 @@ export default function SetupPage() {
             >
               {loading ? (
                 <>
-                  <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
-                    <circle
-                      className="opacity-25"
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      stroke="currentColor"
-                      strokeWidth="4"
-                      fill="none"
-                    />
-                    <path
-                      className="opacity-75"
-                      fill="currentColor"
-                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                    />
-                  </svg>
+                  <LoadingSpinner />
                   Loading...
                 </>
               ) : (

@@ -1,8 +1,8 @@
 const GRID_COLS = {
-  2: "grid grid-cols-2 gap-2",
-  3: "grid grid-cols-3 gap-2",
-  4: "grid grid-cols-4 gap-2",
-  5: "grid grid-cols-5 gap-2",
+  2: "grid grid-cols-2",
+  3: "grid grid-cols-3",
+  4: "grid grid-cols-4",
+  5: "grid grid-cols-5",
 };
 
 export default function ToggleGroup({
@@ -21,7 +21,7 @@ export default function ToggleGroup({
         <span className="material-icons text-primary">{icon}</span>
         {label}
       </h2>
-      <div className={`${gridClass} bg-slate-700/50 p-1 rounded-lg`}>
+      <div className={`${gridClass} gap-2 bg-slate-700/50 p-1 rounded-lg`}>
         {options.map((opt) => {
           const optValue = typeof opt === "string" ? opt : opt.value;
           const optLabel = typeof opt === "string" ? opt : opt.label;

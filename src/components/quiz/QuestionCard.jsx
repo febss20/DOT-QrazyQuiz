@@ -14,7 +14,7 @@ export default function QuestionCard({
   }, [question]);
 
   return (
-    <div className="w-full text-center animate-fadeIn">
+    <div className="w-full text-center animate-questionIn">
       <div className="flex items-center justify-center gap-3 mb-6">
         <span className="inline-block px-3 py-1 bg-secondary/10 text-secondary text-xs font-bold uppercase tracking-wider rounded-full border border-secondary/20">
           {question.category}

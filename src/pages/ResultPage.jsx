@@ -4,9 +4,10 @@ import { useQuiz } from "@/contexts/QuizContext";
 import { useAuth } from "@/contexts/AuthContext";
 import { calculateQuizStats } from "@/utils/helpers";
 import { QUIZ_ACTIONS } from "@/utils/constants";
-import Navbar from "@/components/Navbar";
-import ScoreCard from "@/components/ScoreCard";
-import ReviewAnswerItem from "@/components/ReviewAnswerItem";
+import Navbar from "@/components/common/Navbar";
+import StickyFooter from "@/components/common/StickyFooter";
+import ScoreCard from "@/components/result/ScoreCard";
+import ReviewAnswerItem from "@/components/result/ReviewAnswerItem";
 
 export default function ResultPage() {
   const navigate = useNavigate();
@@ -91,25 +92,22 @@ export default function ResultPage() {
         </section>
       </div>
 
-      {/* Sticky Bottom Bar */}
-      <div className="fixed bottom-0 left-0 right-0 bg-surface-dark/95 backdrop-blur-md border-t border-surface-border z-40">
-        <div className="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
-          <button
-            className="border border-surface-border text-text-muted hover:text-white hover:bg-surface-dark px-6 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center gap-2"
-            onClick={handleBackHome}
-          >
-            <span className="material-icons text-sm">arrow_back</span>
-            Back to Home
-          </button>
-          <button
-            className="bg-secondary hover:bg-secondary-dark text-surface-dark px-8 py-3 rounded-lg font-bold shadow-lg shadow-secondary/30 transform hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2"
-            onClick={handlePlayAgain}
-          >
-            <span className="material-icons text-sm">replay</span>
-            Play Again
-          </button>
-        </div>
-      </div>
+      <StickyFooter>
+        <button
+          className="border border-surface-border text-text-muted hover:text-white hover:bg-surface-dark px-6 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center gap-2"
+          onClick={handleBackHome}
+        >
+          <span className="material-icons text-sm">arrow_back</span>
+          Back to Home
+        </button>
+        <button
+          className="bg-secondary hover:bg-secondary-dark text-surface-dark px-8 py-3 rounded-lg font-bold shadow-lg shadow-secondary/30 transform hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2"
+          onClick={handlePlayAgain}
+        >
+          <span className="material-icons text-sm">replay</span>
+          Play Again
+        </button>
+      </StickyFooter>
     </div>
   );
 }
