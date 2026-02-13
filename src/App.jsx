@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { QuizProvider } from "@/contexts/QuizContext";
-import PrivateRoute from "@/components/PrivateRoute";
+import PrivateRoute from "@/components/common/PrivateRoute";
 import LoginPage from "@/pages/LoginPage";
 import SetupPage from "@/pages/SetupPage";
 import QuizPage from "@/pages/QuizPage";

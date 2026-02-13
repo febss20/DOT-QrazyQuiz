@@ -4,9 +4,9 @@ import { QUIZ_ACTIONS } from "@/utils/constants";
 import { useTimer } from "@/hooks/useTimer";
 import { useQuizNavigation } from "@/hooks/useQuizNavigation";
 import { useAnswerHandler } from "@/hooks/useAnswerHandler";
-import Timer from "@/components/Timer";
-import ProgressBar from "@/components/ProgressBar";
-import QuestionCard from "@/components/QuestionCard";
+import Timer from "@/components/quiz/Timer";
+import ProgressBar from "@/components/quiz/ProgressBar";
+import QuestionCard from "@/components/quiz/QuestionCard";
 
 export default function QuizPage() {
   const {
@@ -70,6 +70,7 @@ export default function QuizPage() {
       <main className="flex-1 flex items-center justify-center px-4 py-8 sm:py-12">
         <div className="max-w-4xl w-full">
           <QuestionCard
+            key={currentIndex}
             question={currentQuestion}
             onAnswer={handleAnswer}
             selectedAnswer={selectedAnswer}

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
+import BackgroundBlobs from "@/components/common/BackgroundBlobs";
 
 export default function LoginPage() {
   const [username, setUsername] = useState("");
@@ -27,11 +28,7 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 relative">
-      {/* Background blobs */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <div className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-primary/10 rounded-full blur-3xl opacity-40 mix-blend-screen" />
-        <div className="absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] bg-blue-900/20 rounded-full blur-3xl opacity-40" />
-      </div>
+      <BackgroundBlobs />
 
       {/* Login Card */}
       <main className="relative z-10 w-full max-w-md bg-surface-dark shadow-2xl rounded-xl border border-slate-700/50 overflow-hidden animate-scaleIn">
