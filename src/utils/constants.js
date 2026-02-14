@@ -68,3 +68,12 @@ export const QUIZ_ACTIONS = {
   RESET_QUIZ: "RESET_QUIZ",
   RESUME_QUIZ: "RESUME_QUIZ",
 };
+
+export const RESPONSE_CODE = {
+  SUCCESS: 0,
+  NO_RESULTS: 1,
+  TOKEN_NOT_FOUND: 3,
+  TOKEN_EMPTY: 4,
+  RATE_LIMIT: 5,
+};
+

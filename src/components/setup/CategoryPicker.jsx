@@ -25,7 +25,7 @@ export default function CategoryPicker({ categories, value, onChange }) {
           <span className="material-icons text-primary">category</span>
           Select Category
         </h2>
-        <span className="text-xs font-medium px-2 py-1 bg-primary/20 text-primary border border-primary/30 rounded">
+        <span className="text-xs font-medium px-2 py-1 bg-primary/20 text-emerald-300 border border-primary/40 rounded">
           Required
         </span>
       </div>
