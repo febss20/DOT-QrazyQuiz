@@ -5,9 +5,9 @@ export default function ProTip() {
         <span className="material-icons">tips_and_updates</span>
       </div>
       <div>
-        <h4 className="font-semibold text-slate-200 text-sm">
+        <p className="font-semibold text-slate-200 text-sm">
           Pro Tip: Focus Mode
-        </h4>
+        </p>
         <p className="text-xs text-slate-400 mt-1">
           Configuring fewer questions (5-10) with &apos;Hard&apos; difficulty is
           proven to improve retention rates by 25%.

@@ -10,12 +10,13 @@ export default function QuestionSlider({ value, onChange }) {
           </span>
           Total Questions
         </h2>
-        <span className="px-3 py-1 bg-primary text-white rounded font-bold text-sm shadow-sm shadow-primary/30">
+        <span className="px-3 py-1 bg-primary-dark text-white rounded font-bold text-sm shadow-sm shadow-primary/30">
           {value}
         </span>
       </div>
       <div className="pt-2 pb-1">
         <input
+          aria-label="Number of Questions"
           className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer focus:outline-none focus:ring-0"
           max={QUESTION_AMOUNTS.max}
           min={QUESTION_AMOUNTS.min}
@@ -23,7 +24,7 @@ export default function QuestionSlider({ value, onChange }) {
           value={value}
           onChange={(e) => onChange(Number(e.target.value))}
         />
-        <div className="flex justify-between mt-2 text-xs font-medium text-slate-500 uppercase tracking-wider">
+        <div className="flex justify-between mt-2 text-xs font-medium text-slate-400 uppercase tracking-wider">
           <span>{QUESTION_AMOUNTS.min} Qs</span>
           <span>{QUESTION_AMOUNTS.max} Qs</span>
         </div>

@@ -149,7 +149,7 @@ export default function SetupPage() {
               Back to Dashboard
             </button>
             <button
-              className="bg-primary hover:bg-primary-hover text-white px-8 py-3 rounded-lg font-semibold shadow-lg shadow-primary/30 transform hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+              className="bg-primary-dark hover:bg-primary text-white px-8 py-3 rounded-lg font-semibold shadow-lg shadow-primary/30 transform hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               onClick={handleStartQuiz}
               disabled={loading}
             >
